@@ -1,0 +1,26 @@
+.player-one, .player-two {
+    border-radius: 50%;
+    width: 75%;
+    height: 75%;
+    border: 1px solid black;
+  }
+  
+  .player-one {
+    background-color:white ;
+  }
+  
+  .player-two {
+    background-color: red;
+  }
+
+  /*before any king piece put crown */
+.king::before {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 25px;
+    background-image: url('../Images/king.png');
+    background-size: 100% 100%;
+    background-position: 0px 2px;
+    background-repeat: no-repeat; 
+  }
