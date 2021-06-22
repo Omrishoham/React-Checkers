@@ -151,6 +151,25 @@ class App extends Component {
     return Math.abs(this.state.checkers[checker].row - row) === 2;
   }
 
+  moveChecker(checker, row, col) {
+    let c = this.state.checkers[checker];
+    let board = this.state.board;
+    let checkers = this.state.checkers;
+    let cRow = c.row;
+    let cCol = c.col;
+    if (this.isJumpMove(checker, row)) {
+      let midRow = (cRow + row) / 2;
+      let midCol = (cCol + col) / 2;
+      let removedPlayer = this.state.board[midRow][midCol];
+      board[midRow][midCol] = null;
+      checkers[removedPlayer].removed = true;
+    }
+    c.row = row;
+    c.col = col;
+    board[cRow][cCol] = null;
+    board[row][col] = checker;
+    this.setState({ board: board, checkers: checkers });
+  }
 
 
   
