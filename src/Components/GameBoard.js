@@ -1,15 +1,14 @@
 import React,{Component} from 'react'
 import Row from './Row'
-import './CheckersBoard.css'
-class CheckersBoard extends Component {
+class GameBoard extends Component {
     render() {
       let selectedRow = this.props.choosedSquare ? this.props.choosedSquare.row : null;
-      let rows = this.props.board.map((row, i) => {
+      let rows = this.props.board.board.map((row, i) => {
         return <Row key={i} 
                 row={row} 
-                choosedSquare={i === selectedRow ? this.props.choosedSquare : null}
+                choosedSquare={i == selectedRow ? this.props.choosedSquare : null}
                 rowNum={i} 
-                checkers={this.props.checkers}
+                checkers={this.props.board.checkers}
                 selectSquare={this.props.selectSquare}
                 players={this.props.players} />;
       });
@@ -21,4 +20,4 @@ class CheckersBoard extends Component {
     }
   }
 
-  export default CheckersBoard;
+  export default GameBoard;

@@ -1,7 +1,6 @@
 import React from 'react';
-import './CheckerPiece.css'
 
-function CheckerPiece(props) {
+function Piece(props) {
     let classes = "";
     if (props.checker) {
       classes += props.players[props.checker.player].class;
@@ -14,4 +13,4 @@ function CheckerPiece(props) {
     )
   }
   
-  export default CheckerPiece;
+  export default Piece;
